@@ -9,7 +9,7 @@ class Command(BaseCommand):
         fake = faker.Faker()
 
         books = []
-        for _ in range(400):
+        for _ in range(10000):
             book = Books(
                 title=fake.sentence(nb_words=5),
                 author=fake.name(),
@@ -18,4 +18,4 @@ class Command(BaseCommand):
             books.append(book)
         
         Books.objects.bulk_create(books)
-        self.stdout.write(self.style.SUCCESS('Successfully inserted 100 books'))
+        self.stdout.write(self.style.SUCCESS('Successfully inserted 100000 books'))
