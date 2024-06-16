@@ -10,7 +10,8 @@ class SearchView(View):
         q = request.GET.get('q')
         context = {}
         if q:
-            query = MultiMatch(query=q, fields=['title', 'description'])
+            #fuzziness - results similar words as well
+            query = MultiMatch(query=q, fields=['title', 'description'], fuzziness="AUTO")
             search = BookDocument.search().query(query)
             context['books'] = search
         return render(request, 'index.html', context)
