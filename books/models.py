@@ -6,6 +6,10 @@ class Books(models.Model):
     author = models.CharField(max_length=100)
     description = models.TextField()
     
+    class Meta:
+        ordering = ['-id']
+        verbose_name_plural = 'Books'
+    
     
     def __str__(self):
         return self.title
