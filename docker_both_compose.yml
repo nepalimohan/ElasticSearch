@@ -21,16 +21,3 @@ services:
       - xpack.security.enabled=false
 volumes:
   esdata01:
-
-
-# services:
-#   ecommerce:
-#     image: nepalimohan/ecommerce-web:push1  # Specify your Docker Hub image
-#     ports:
-#       - "80:8000"  # Map port 80 on the host to port 80 on the container (adjust as needed)
-#     # environment:
-#     #   - ENV_VAR1=value1  
-#     #   - ENV_VAR2=value2
-#     volumes:
-#       - ./data:/app/data  # Bind mount a volume if your container needs persistent storage
-#     restart: always  # Ensure the container restarts if it crashes
